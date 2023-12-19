@@ -557,10 +557,7 @@ export const useChatStore = createPersistStore(
             },
             onFinish(message) {
               console.log("[Memory] ", message);
-              get().updateCurrentSession((session) => {
-                session.lastSummarizeIndex = lastSummarizeIndex;
-                session.memoryPrompt = message; // Update the memory prompt for stored it in local storage
-              });
+              session.lastSummarizeIndex = lastSummarizeIndex;
             },
             onError(err) {
               console.error("[Summarize] ", err);
